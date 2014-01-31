@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.10/angular-animate.min.js"></script>
+    <script src="imageTest.js"></script>
+
+    <title>Image switch using Angular</title>
+</head>
+<body>
+<div ng-controller="CardController">
+<select ng-model="selection" ng-options="item for item in card"></select>
+<p>The current card is currently: {{selection}}</p>
+
+<img ng-src="img/{{selection}}.jpg" />
+</div>
+
+</body>
+</html>

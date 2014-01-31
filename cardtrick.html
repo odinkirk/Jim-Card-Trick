@@ -1,0 +1,263 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Card Magic</title>
+<link href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="cardGame.js"></script>
+<script>
+$(document).ready(function(e) {
+    $(".return").hide();
+	$("#BtnCardChanger").click(ManualShuffle);
+	
+});
+</script>
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="content">	
+    <h1>Do you have your own deck of cards?</h1>
+		<ul data-role="listview">
+			<li><a href="#deck1">Yes</a></li>
+            <li><a href="#comp1">No</a></li>
+		</ul>		
+	</div>
+</div>
+
+<div data-role="page" id="deck1">
+	<div data-role="content">	
+		<h1>Shuffle your deck of cards.</h1>
+        <a href="#deck2">Next</a>
+	</div>
+</div>
+
+<div data-role="page" id="deck2">
+<div data-role="content">
+<h2>Cut the deck roughly in half. It does not have to be perfect, but it should be close. Keep the two halves separate until told otherwise.</h2>
+<a href="#deck3">Next</a>
+</div>
+</div>
+
+<div data-role="page" id="deck3">
+<div data-role="content">
+<h2>With the stack you have chosen remaining face down, count the number of cards and make a note of the number.</h2>
+<a href="#deck4">Next</a>
+</div>
+</div>
+
+<div data-role="page" id="deck4">
+<div data-role="content">
+<h2>Add the digits in the answer together arriving at a smaller number.</h2>
+<a href="#deck5">Next</a>
+</div>
+</div>
+
+<div data-role="page" id="deck5">
+<div data-role="content">
+<h3>From here forward, avoid rearranging the cards. Turn the deck half we're working with face up and count to the card positioned at your answer to the last step. Memorize the card.</h3>
+<a href="#deck6">Next</a>
+</div>
+</div>
+
+<div data-role="page" id="deck6">
+<div data-role="content">
+<h2>Being sure to keep the cards in the order they were in at the start of the last step, place this pack of cards face down on top of the rest of the deck.</h2>
+<a href="#deck7">Next</a>
+</div>
+</div>
+
+<div data-role="page" id="deck7">
+<div data-role="content">
+<h2>
+Starting from the back of the deck turn one card at a time face up and let me know what you see for value and suit.</h2>
+
+
+<div class="ui-grid-a">
+  <div class="ui-block-a">
+    <div data-role="fieldcontain">
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup">
+          <legend>Rank</legend>
+          <input type="radio" name="deckrank" id="deckrank_0" value="" />
+          <label for="deckrank_0">Ace</label>
+          <input type="radio" name="deckrank" id="deckrank_1" value="" />
+          <label for="deckrank_1">2</label>
+          <input type="radio" name="deckrank" id="deckrank_2" value="" />
+          <label for="deckrank_2">3</label>
+          <input type="radio" name="deckrank" id="deckrank_3" value="" />
+          <label for="deckrank_3">4</label>
+          <input type="radio" name="deckrank" id="deckrank_4" value="" />
+          <label for="deckrank_4">5</label>
+          <input type="radio" name="deckrank" id="deckrank_5" value="" />
+          <label for="deckrank_5">6</label>
+          <input type="radio" name="deckrank" id="deckrank_6" value="" />
+          <label for="deckrank_6">7</label>
+          <input type="radio" name="deckrank" id="deckrank_7" value="" />
+          <label for="deckrank_7">8</label>
+          <input type="radio" name="deckrank" id="deckrank_8" value="" />
+          <label for="deckrank_8">9</label>
+          <input type="radio" name="deckrank" id="deckrank_9" value="" />
+          <label for="deckrank_9">10</label>
+          <input type="radio" name="deckrank" id="deckrank_10" value="" />
+          <label for="deckrank_10">Jack</label>
+          <input type="radio" name="deckrank" id="deckrank_11" value="" />
+          <label for="deckrank_11">Queen</label>
+          <input type="radio" name="deckrank" id="deckrank_12" value="" />
+          <label for="deckrank_12">King</label>
+          
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <div class="ui-block-b">
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup">
+        <legend>Suit</legend>
+        <input type="radio" name="decksuit" id="decksuit_0" value="" />
+        <label for="decksuit_0">Spades</label>
+        <input type="radio" name="decksuit" id="decksuit_1" value="" />
+        <label for="decksuit_1">Diamonds</label>
+        <input type="radio" name="decksuit" id="decksuit_2" value="" />
+        <label for="decksuit_2">Clubs</label>
+        <input type="radio" name="decksuit" id="decksuit_3" value="" />
+        <label for="decksuit_3">Hearts</label>
+      </fieldset>
+    </div>
+  </div>
+</div>
+<p class="return" style="display:none">
+<a href="#page">Try it again!</a>
+</p>
+<p class="btnDeckCheck">
+  <button id="btnDeckCheck" data-icon="check" onClick="DeckCheck()">OK</button>
+</p>
+</div>
+</div>
+
+<div data-role="page" id="deck8">
+<div data-role="content">
+
+<a href="#deck5">Next</a>
+</div>
+</div>
+
+<div data-role="page" id="deck9">
+<div data-role="content">
+<a href="#page">Back to Start</a>
+</div>
+</div>
+
+
+<div data-role="page" id="comp1">
+	<div data-role="header">
+		<h1>Time to Shuffle</h1>
+       
+	</div>
+	<div data-role="content">	
+		 <p> First off, let's shuffle the deck:
+        </p>
+        <span style="text-align:center"><button data-icon="star" id="compShuffle" onClick="ManualShuffle()">Shuffle</button></span><br />
+	<div class="shuffleNext" style="display:none">
+    <p>Now, let's go on to the next page:</p>
+    <a href="#comp2" id="comp2link"><button data-icon="arrow-r">Next</button></a>
+    <br />
+    
+    </div>
+    </div>
+	<div data-role="footer">
+	  <h4>&nbsp;</h4>
+	</div>
+</div>
+<div data-role="page" id="comp2">
+	<div data-role="header">
+		<h1>Time to Shuffle!</h1>
+	</div>
+	<div data-role="content">
+   	<p>It's time to shuffle the deck. Our program will to this
+    automagically for you.
+    </p>
+    <button data-icon="refresh" style="text-align:center">Shuffle</button>
+    <br />
+    </div>
+    <div data-role="footer">
+	  <h4>&nbsp;</h4>
+	</div>
+</div>
+<div data-role="page" id="comp3">
+	<div data-role="header">
+		<h1>Select Your Card</h1>
+	</div>
+	<div data-role="content">
+	  <p>Here is where we select the magic card. This is done by adding the two digits in the number of cards in the cut. Here, we've done that for you.</p>
+	  <p id="magic">&nbsp;</p>
+	 <div style="float:left;width:250;height:auto" >
+
+<img class="cardSA theCards" src="img/SA.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS2 theCards" src="img/S2.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS3 theCards" src="img/S3.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS4 theCards" src="img/S4.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS5 theCards" src="img/S5.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS6 theCards" src="img/S6.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS7 theCards" src="img/S7.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS8 theCards" src="img/S8.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS9 theCards" src="img/S9.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardS10 theCards" src="img/S10.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardSJ theCards" src="img/SJ.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardSQ theCards" src="img/SQ.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardSK theCards" src="img/SK.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardCA theCards" src="img/CA.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC2 theCards" src="img/C2.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC3 theCards" src="img/C3.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC4 theCards" src="img/C4.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC5 theCards" src="img/C5.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC6 theCards" src="img/C6.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC7 theCards" src="img/C7.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC8 theCards" src="img/C8.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC9 theCards" src="img/C9.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardC10 theCards" src="img/C10.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardCJ theCards" src="img/CJ.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardCQ theCards" src="img/CQ.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardCK theCards" src="img/CK.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardDA theCards" src="img/DA.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD2 theCards" src="img/D2.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD3 theCards" src="img/D3.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD4 theCards" src="img/D4.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD5 theCards" src="img/D5.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD6 theCards" src="img/D6.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD7 theCards" src="img/D7.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD8 theCards" src="img/D8.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD9 theCards" src="img/D9.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardD10 theCards" src="img/D10.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardDJ theCards" src="img/DJ.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardDQ theCards" src="img/DQ.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardDK theCards" src="img/DK.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardHA theCards" src="img/HA.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH2 theCards" src="img/H2.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH3 theCards" src="img/H3.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH4 theCards" src="img/H4.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH5 theCards" src="img/H5.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH6 theCards" src="img/H6.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH7 theCards" src="img/H7.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH8 theCards" src="img/H8.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH9 theCards" src="img/H9.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardH10 theCards" src="img/H10.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardHJ theCards" src="img/HJ.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardHQ theCards" src="img/HQ.jpg" width="250" height="363" style="display:none;text-align:center">
+<img class="cardHK theCards" src="img/HK.jpg" width="250" height="363" style="display:none;text-align:center">
+
+</div><br />
+      <p>
+	    <button id="btnCardChanger" onClick="cutNextCard()">Next card</button>
+      </p>
+	  <p id="testgraph">Does it work?</p>
+  </div>
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+</body>
+</html>
