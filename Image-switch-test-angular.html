@@ -9,11 +9,19 @@
 </head>
 <body>
 <div ng-controller="CardController">
-<select ng-model="selection" ng-options="item for item in card"></select>
-<p>The current card is currently: {{selection}}</p>
 
-<img ng-src="img/{{selection}}.jpg" />
+    <!-- <select ng-model="selection" ng-options="item for item in card"></select> -->
+    <br />
+    <button ng-click="cardPick = cardPick - 1" ng-disabled="cardPick < 1">Decrement</button>
+    <button ng-click="cardPick = cardPick + 1" ng-disabled="cardPick > 50" >Increment</button>
+
+    <p>The current selection is currently: {{selection}}</p>
+    <p>The current cardPick  is {{cardPick}}</p>
+    <p>The current card is {{card[cardPick]}}</p>
+
+<img ng-src="img/{{selection}}.jpg" width="125" height="auto" />
 </div>
-
+<div ng-controller="CardController">
+</div>
 </body>
 </html>
