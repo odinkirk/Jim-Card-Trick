@@ -34,5 +34,5 @@ function CardController($scope) {
         $scope.cardPick = $scope.cardPick - 1;
         $scope.selection = $scope.card[$scope.cardPick];
     }
-};
+}
 

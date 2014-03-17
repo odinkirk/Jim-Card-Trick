@@ -1,22 +1,29 @@
 <!DOCTYPE html> 
-<html>
+<html ng-app="CardTrick">
 <head>
 <meta charset="utf-8">
 <title>Card Magic</title>
-<link href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
-<script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
-<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="jquery-2.1.0.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.4.2.min.js" type="text/javascript"></script>
+<link href="jquery.mobile-1.4.2.min.css" rel="stylesheet" type="text/css"/>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script src="http://code.angularjs.org/1.2.10/angular-animate.min.js"></script>
 <script src="cardGame.js"></script>
-<script>
+
+    <!--<script>
+    /*
+    TODO: This is to be replaced with $evalAsync
+    TODO: See: http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync
+    TODO: See also: http://stackoverflow.com/a/13619324/3260232
 $(document).ready(function(e) {
-    $(".return").hide();
 	$("#BtnCardChanger").click(ManualShuffle);
 	
 });
-</script>
+    */
+</script> -->
 </head> 
 <body> 
-
+<div ng-controller="CardController">
 <div data-role="page" id="page">
 	<div data-role="content">	
     <h1>Do you have your own deck of cards?</h1>
@@ -128,11 +135,11 @@ Starting from the back of the deck turn one card at a time face up and let me kn
     </div>
   </div>
 </div>
-<p class="return" style="display:none">
-<a href="#page">Try it again!</a>
+<p class="return" ng-show="deckRetryVis" style="display: none">
+<a href="#page" >Try it again!</a>
 </p>
 <p class="btnDeckCheck">
-  <button id="btnDeckCheck" data-icon="check" onClick="DeckCheck()">OK</button>
+  <button id="btnDeckCheck" data-icon="check" ng-click="DeckCheck()">OK</button>
 </p>
 </div>
 </div>
@@ -162,7 +169,7 @@ Starting from the back of the deck turn one card at a time face up and let me kn
         <span style="text-align:center"><button data-icon="star" id="compShuffle" onClick="ManualShuffle()">Shuffle</button></span><br />
 	<div class="shuffleNext" style="display:none">
     <p>Now, let's go on to the next page:</p>
-    <a href="#comp2" id="comp2link"><button data-icon="arrow-r">Next</button></a>
+    <a href="#comp2" ng-show="comp2LinkVis" style="display: none"><button data-icon="arrow-r">Next</button></a>
     <br />
     
     </div>
@@ -179,7 +186,7 @@ Starting from the back of the deck turn one card at a time face up and let me kn
    	<p>It's time to shuffle the deck. Our program will to this
     automagically for you.
     </p>
-    <button data-icon="refresh" style="text-align:center">Shuffle</button>
+    <button data-icon="refresh" style="text-align:center" ng-click="DeckShuffle()">Shuffle</button>
     <br />
     </div>
     <div data-role="footer">
@@ -195,58 +202,8 @@ Starting from the back of the deck turn one card at a time face up and let me kn
 	  <p id="magic">&nbsp;</p>
 	 <div style="float:left;width:250;height:auto" >
 
+<!-- TODO: update the image to be like the card image in image-switch-test-angular -->
 <img class="cardSA theCards" src="img/SA.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS2 theCards" src="img/S2.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS3 theCards" src="img/S3.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS4 theCards" src="img/S4.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS5 theCards" src="img/S5.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS6 theCards" src="img/S6.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS7 theCards" src="img/S7.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS8 theCards" src="img/S8.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS9 theCards" src="img/S9.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardS10 theCards" src="img/S10.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardSJ theCards" src="img/SJ.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardSQ theCards" src="img/SQ.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardSK theCards" src="img/SK.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardCA theCards" src="img/CA.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC2 theCards" src="img/C2.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC3 theCards" src="img/C3.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC4 theCards" src="img/C4.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC5 theCards" src="img/C5.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC6 theCards" src="img/C6.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC7 theCards" src="img/C7.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC8 theCards" src="img/C8.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC9 theCards" src="img/C9.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardC10 theCards" src="img/C10.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardCJ theCards" src="img/CJ.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardCQ theCards" src="img/CQ.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardCK theCards" src="img/CK.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardDA theCards" src="img/DA.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD2 theCards" src="img/D2.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD3 theCards" src="img/D3.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD4 theCards" src="img/D4.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD5 theCards" src="img/D5.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD6 theCards" src="img/D6.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD7 theCards" src="img/D7.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD8 theCards" src="img/D8.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD9 theCards" src="img/D9.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardD10 theCards" src="img/D10.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardDJ theCards" src="img/DJ.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardDQ theCards" src="img/DQ.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardDK theCards" src="img/DK.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardHA theCards" src="img/HA.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH2 theCards" src="img/H2.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH3 theCards" src="img/H3.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH4 theCards" src="img/H4.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH5 theCards" src="img/H5.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH6 theCards" src="img/H6.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH7 theCards" src="img/H7.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH8 theCards" src="img/H8.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH9 theCards" src="img/H9.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardH10 theCards" src="img/H10.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardHJ theCards" src="img/HJ.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardHQ theCards" src="img/HQ.jpg" width="250" height="363" style="display:none;text-align:center">
-<img class="cardHK theCards" src="img/HK.jpg" width="250" height="363" style="display:none;text-align:center">
 
 </div><br />
       <p>
@@ -258,6 +215,6 @@ Starting from the back of the deck turn one card at a time face up and let me kn
 		<h4>Page Footer</h4>
 	</div>
 </div>
-
+</div>
 </body>
 </html>
