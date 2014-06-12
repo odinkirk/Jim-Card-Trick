@@ -26,121 +26,48 @@ $(document).ready(function(e) {
 <div ng-controller="CardController">
 <div data-role="page" id="page">
 	<div data-role="content">	
-    <h1>Do you have your own deck of cards?</h1>
-		<ul data-role="listview">
-			<li><a href="#deck1">Yes</a></li>
-            <li><a href="#comp1">No</a></li>
-		</ul>		
+    
 	</div>
 </div>
 
 <div data-role="page" id="deck1">
 	<div data-role="content">	
-		<h1>Shuffle your deck of cards.</h1>
-        <a href="#deck2">Next</a>
+		
 	</div>
 </div>
 
 <div data-role="page" id="deck2">
 <div data-role="content">
-<h2>Cut the deck roughly in half. It does not have to be perfect, but it should be close. Keep the two halves separate until told otherwise.</h2>
-<a href="#deck3">Next</a>
+
 </div>
 </div>
 
 <div data-role="page" id="deck3">
 <div data-role="content">
-<h2>With the stack you have chosen remaining face down, count the number of cards and make a note of the number.</h2>
-<a href="#deck4">Next</a>
+
 </div>
 </div>
 
 <div data-role="page" id="deck4">
 <div data-role="content">
-<h2>Add the digits in the answer together arriving at a smaller number.</h2>
-<a href="#deck5">Next</a>
+
 </div>
 </div>
 
 <div data-role="page" id="deck5">
 <div data-role="content">
-<h3>From here forward, avoid rearranging the cards. Turn the deck half we're working with face up and count to the card positioned at your answer to the last step. Memorize the card.</h3>
-<a href="#deck6">Next</a>
+
 </div>
 </div>
 
 <div data-role="page" id="deck6">
 <div data-role="content">
-<h2>Being sure to keep the cards in the order they were in at the start of the last step, place this pack of cards face down on top of the rest of the deck.</h2>
-<a href="#deck7">Next</a>
+
 </div>
 </div>
 
 <div data-role="page" id="deck7">
 <div data-role="content">
-<h2>
-Starting from the back of the deck turn one card at a time face up and let me know what you see for value and suit.</h2>
-
-
-<div class="ui-grid-a">
-  <div class="ui-block-a">
-    <div data-role="fieldcontain">
-      <div data-role="fieldcontain">
-        <fieldset data-role="controlgroup">
-          <legend>Rank</legend>
-          <input type="radio" name="deckrank" id="deckrank_0" value="" />
-          <label for="deckrank_0">Ace</label>
-          <input type="radio" name="deckrank" id="deckrank_1" value="" />
-          <label for="deckrank_1">2</label>
-          <input type="radio" name="deckrank" id="deckrank_2" value="" />
-          <label for="deckrank_2">3</label>
-          <input type="radio" name="deckrank" id="deckrank_3" value="" />
-          <label for="deckrank_3">4</label>
-          <input type="radio" name="deckrank" id="deckrank_4" value="" />
-          <label for="deckrank_4">5</label>
-          <input type="radio" name="deckrank" id="deckrank_5" value="" />
-          <label for="deckrank_5">6</label>
-          <input type="radio" name="deckrank" id="deckrank_6" value="" />
-          <label for="deckrank_6">7</label>
-          <input type="radio" name="deckrank" id="deckrank_7" value="" />
-          <label for="deckrank_7">8</label>
-          <input type="radio" name="deckrank" id="deckrank_8" value="" />
-          <label for="deckrank_8">9</label>
-          <input type="radio" name="deckrank" id="deckrank_9" value="" />
-          <label for="deckrank_9">10</label>
-          <input type="radio" name="deckrank" id="deckrank_10" value="" />
-          <label for="deckrank_10">Jack</label>
-          <input type="radio" name="deckrank" id="deckrank_11" value="" />
-          <label for="deckrank_11">Queen</label>
-          <input type="radio" name="deckrank" id="deckrank_12" value="" />
-          <label for="deckrank_12">King</label>
-          
-        </fieldset>
-      </div>
-    </div>
-  </div>
-  <div class="ui-block-b">
-    <div data-role="fieldcontain">
-      <fieldset data-role="controlgroup">
-        <legend>Suit</legend>
-        <input type="radio" name="decksuit" id="decksuit_0" value="" />
-        <label for="decksuit_0">Spades</label>
-        <input type="radio" name="decksuit" id="decksuit_1" value="" />
-        <label for="decksuit_1">Diamonds</label>
-        <input type="radio" name="decksuit" id="decksuit_2" value="" />
-        <label for="decksuit_2">Clubs</label>
-        <input type="radio" name="decksuit" id="decksuit_3" value="" />
-        <label for="decksuit_3">Hearts</label>
-      </fieldset>
-    </div>
-  </div>
-</div>
-<p class="return" ng-show="deckRetryVis" style="display: none">
-<a href="#page" >Try it again!</a>
-</p>
-<p class="btnDeckCheck">
-  <button id="btnDeckCheck" data-icon="check" ng-click="DeckCheck()">OK</button>
-</p>
 </div>
 </div>
 
