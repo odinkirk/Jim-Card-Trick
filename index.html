@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="magic">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Jim's Card Trick</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body ng-controller="TrickController as trick">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" role="form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Hello, world!</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+            <p ng-show "trick.hi === 1">Hello, World!</p>
+
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="card in trick.cards | limitTo: 1">
+                    <figure>
+                        <img ng-src="{{card.source}}" alt="{{card.id}}" style="width:auto;height:150px">
+                        <figcaption>{{card.name}}</figcaption>
+                    </figure>
+                </li>
+            </ul>
+            <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-xs-6 col-md-4 col-md-offset-3">
+                <!-- page template
+                <div ng-show="trick.page === [PAGE ID HERE]">
+                    <h1>Title</h1>
+                    content
+                    content
+                    content
+                    content
+                    content
+                </div>
+-->
+
+                <!-- start page -->
+                <div ng-show="trick.page === 1">
+                    <h1>Do you have your own deck of cards?</h1>
+                    <ul data-role="listview">
+                        <li>
+                            <button ng-click="trick.page = 11">
+                                Yes
+                            </button>
+                        </li>
+                        <li>
+                            <button ng-click="trick.page = 21">
+                                No
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Deck 1 page -->
+                <div ng-show="trick.page === 11">
+                    <h1>Time to Shuffle</h1>
+                    <p>Shuffle your deck of cards</p>
+                    <button ng-click="trick.page = 12">
+                        next
+                    </button>
+                </div>
+                <!-- Deck 2 page -->
+                <div ng-show="trick.page === 12">
+                    <h1>Cut the Deck</h1>
+                    <p>Cut the deck roughly in half. It does not have to be perfect, but it should be close. Keep the two halves separate for now.</p>
+                    <button ng-click="trick.page = 13">
+                        next
+                    </button>
+                </div>
+                <!-- Deck 3 page -->
+                <div ng-show="trick.page === 13">
+                    <h1>Count How Many</h1>
+                    <p>With the stack you have chosen remaining face down, count the number of cards and make a note of the number.</p>
+                    <button ng-click="trick.page = 14">
+                        next
+                    </button>
+                </div>
+                <!-- Deck 4 page -->
+                <div ng-show="trick.page === 14">
+                    <h1>Add Them Up</h1>
+                    <p>Add the digits in the answer together arriving at a smaller number.</p>
+                    <button ng-click="trick.page = 15">
+                        next
+                    </button>
+                </div>
+                <!-- Deck 5 page -->
+                <div ng-show="trick.page === 15">
+                    <h1>Your Card Revealed</h1>
+                    <p>From here forward, avoid rearranging the cards. Turn the deck half we're working with face up and count to the card positioned at your answer to the last step. Memorize the card.</p>
+                    <button ng-click="trick.page = 16">
+                        next
+                    </button>
+                </div>
+                <!-- Deck 6 page -->
+                <div ng-show="trick.page === 16">
+                    <h1>Putting it all together</h1>
+                    <p>Being sure to keep the cards in the order they were in at the start of the last step, place this pack of cards face down on top of the rest of the deck.</p>
+                    <button ng-click="trick.page = 17">
+                        next
+                    </button>
+                </div>
+                <!-- Deck 7 page -->
+                <div ng-show="trick.page === 17">
+                    <h1>And your card is...</h1>
+                    <p>Starting from the back of the deck turn one card at a time face up and let me know what you see for value and suit.</p>
+                    <p><strong>TODO: </strong>
+                    </p>
+                    <ul>
+                        <li>Add in the setup for the card-changer with the logic to loop and alert for the card.</li>
+                        <li>Set the reset button ng-disabled until the loop identifies the right card, after the alert.</li>
+                    </ul>
+                    <button ng-click="reset()">
+                        Back to the beginning
+                    </button>
+                </div>
+
+                <!-- Comp 1 page -->
+                <div ng-show="trick.page === 21">
+                    <h1>Time to Shuffle</h1>
+                    <p><strong>TODO:</strong>
+                    </p>
+                    <ul>
+                        <li>Add button to shuffle</li>
+                        <li>Finish populating original deck array</li>
+                        <li>Add logic to creat a shuffled array based on the copy obtained from originalDeck</li>
+                        <li>Add button to continue with ng-show that will be visible once deck is shuffled.</li>
+                    </ul>
+                    <button ng-click="trick.page = 22">
+                        next (placeholder)
+                    </button>
+                </div>
+                <!-- Comp 2 page -->
+                <div ng-show="trick.page === 22">
+                    <h1>Cut the Deck</h1>
+                    <p><strong>TODO:</strong>
+                    </p>
+                    <ul>
+                        <li>Add image of card displayed</li>
+                        <li>Display array index + 1 to show the current number of cards in the deck.</li>
+                        <li>Create buttons with ng-disabled(when beyond certain values) to scroll through the cards</li>
+                        <li>Add button to select and continue.</li>
+                    </ul>
+                    <button ng-click="trick.page = 23">
+                        next (placeholder)
+                    </button>
+                </div>
+                <!-- Comp 3 page -->
+                <div ng-show="trick.page === 23">
+                    <h1>Your Card Revealed</h1>
+                    <p><strong>TODO:</strong>
+                    </p>
+                    <ul>
+                        <li>Show the cut from earlier</li>
+                        <li>Show the digits and then add them.</li>
+                        <li>Display the cards with a single button to move the deck a single step towards the card.</li>
+                        <li>Add button to continuewith ng-show that will be visible once deck is shuffled.</li>
+                        <ul>
+                            <li>Might want to code a function for this.</li>
+                            <li>Perhaps create a custom class with a thick green border and use ng-class to highlight the magic card.</li>
+                        </ul>
+                        <li>Add button to continue with ng-show that will be visible once the card is revealed.</li>
+                    </ul>
+                    <button ng-click="trick.page = 24">
+                        next (placeholder)
+                    </button>
+                </div>
+                <!-- Comp 4 page -->
+                <div ng-show="trick.page === 24">
+                    <h1>And your card is...</h1>
+                    <p><strong>TODO:</strong>
+                    </p>
+                    <ul>
+                        <li>Show the cards, and a single button to go through the deck (opposite way instead of above).</li>
+                        <li>Once the card is found, highlight it as above and display the reset button
+                    </ul>
+                    <button ng-click="trick.page = 1">
+                        reset (placeholder)
+                    </button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; Company 2014</p>
+        </footer>
+    </div>
+    <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')
+    </script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] = function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
