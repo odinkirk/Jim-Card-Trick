@@ -61,20 +61,15 @@
         <div class="container">
             <h1>Hello, world!</h1>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-           
+            <p ng-show "trick.hi === 1">Hello, World!</p>
 
             <ul class="list-group">
-                <li class="list-group-item">
+                <li class="list-group-item" ng-repeat="card in trick.cards | limitTo: 1">
                     <figure>
-                        <img ng-src="{{trick.cards[trick.deckPosition].source}}" alt="{{trick.cards[trick.deckPosition].id}}" style="width:auto;height:150px">
-                        <figcaption>{{trick.cards[trick.deckPosition].name}}</figcaption>
+                        <img ng-src="{{card.source}}" alt="{{card.id}}" style="width:auto;height:150px">
+                        <figcaption>{{card.name}}</figcaption>
                     </figure>
                 </li>
-                <li><button ng-click="trick.deckPosition = trick.deckPosition + 1">
-                    Next
-                    </button> <button ng-click="trick.deckButton()">
-                    Next ()
-                    </button> 
             </ul>
             <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a>
             </p>
@@ -164,12 +159,13 @@
                 <div ng-show="trick.page === 17">
                     <h1>And your card is...</h1>
                     <p>Starting from the back of the deck turn one card at a time face up and let me know what you see for value and suit.</p>
-                    <button ng-disabled="trick.deckButtonDisable" ng-click="trick.deckButton()" class="btn btn-primary">
-                        Next card...
-                    </button>
-                   
-                    
-                    <button class="btn btn-success" ng-show="trick.deckButtonDisable" ng-click="trick.reset()">
+                    <p><strong>TODO: </strong>
+                    </p>
+                    <ul>
+                        <li>Add in the setup for the card-changer with the logic to loop and alert for the card.</li>
+                        <li>Set the reset button ng-disabled until the loop identifies the right card, after the alert.</li>
+                    </ul>
+                    <button ng-click="reset()">
                         Back to the beginning
                     </button>
                 </div>
@@ -246,7 +242,7 @@
         <hr>
 
         <footer>
-            <p>&copy; John Allison 2014</p>
+            <p>&copy; Company 2014</p>
         </footer>
     </div>
     <!-- /container -->
