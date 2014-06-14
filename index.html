@@ -101,7 +101,7 @@
                             </button>
                         </li>
                         <li>
-                            <button ng-click="trick.page = 21">
+                            <button ng-click="trick.reset()">
                                 No
                             </button>
                         </li>
@@ -173,17 +173,15 @@
                 <!-- Comp 1 page -->
                 <div ng-show="trick.page === 21">
                     <h1>Time to Shuffle</h1>
-                    <p><strong>TODO:</strong>
-                    </p>
-                    <ul>
-                        <li>Add button to shuffle</li>
-                        <li>Finish populating original deck array</li>
-                        <li>Add logic to creat a shuffled array based on the copy obtained from originalDeck</li>
-                        <li>Add button to continue with ng-show that will be visible once deck is shuffled.</li>
-                    </ul>
-                    <button ng-click="trick.page = 22">
-                        next (placeholder)
-                    </button>
+                    <div style="text-align:center">
+                        <button class="btn btn-primary" ng-click="trick.shuffle()" ng-disabled="trick.shuffleDone == true">
+                            Shuffle the deck
+                        </button>
+                        <br />
+                        <button class="btn btn-success" ng-show="trick.shuffleDone == true" ng-click="trick.page = 22">
+                            Continue
+                        </button>
+                    </div>
                 </div>
                 <!-- Comp 2 page -->
                 <div ng-show="trick.page === 22">
