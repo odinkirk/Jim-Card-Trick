@@ -158,7 +158,7 @@
                     <h1>Cut the Deck</h1>
                     <div style="text-align:center">
                         <figure>
-                            <img ng-src="{{trick.shuffled[trick.cutPick].source}}" style="width:auto;height:150px">
+                            <img ng-src="{{trick.shuffled[trick.cutPick].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.cutPick].id}}">
                         </figure>
                         <br />
                         <div class="btn-group">
@@ -178,7 +178,7 @@
                     <p>You cut the deck with {{trick.cutPick}} cards in the top section. When we add the digits, we get {{trick.digitOne}} + {{trick.digitTwo}} = {{trick.magicNum}}. Going {{trick.magicNum}} cards into the top section from the cut gives us this card:</p>
                     <div style="text-align:center">
                         <figure>
-                            <img ng-src="{{trick.shuffled[trick.deckPosition - (trick.magicNum+1)].source}}" style="width:auto;height:150px">
+                            <img ng-src="{{trick.shuffled[trick.deckPosition - (trick.magicNum+1)].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.deckPosition - (trick.magicNum+1)].id}}">
                             <figcaption>{{trick.shuffled[trick.deckPosition - (trick.magicNum+1)].name}}</figcaption>
                         </figure>
                         <button class="btn btn-success" ng-click="trick.lastPage()">
@@ -191,7 +191,7 @@
                     <h1>And your card is...</h1>
                     <div style="text-align:center">
                         <figure>
-                            <img ng-src="{{trick.shuffled[trick.deckPosition].source}}" style="width:auto;height:150px">
+                            <img ng-src="{{trick.shuffled[trick.deckPosition].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.deckPosition].id}}">
                             <figcaption ng-show="trick.deckPosition == 18">Your card: The {{trick.shuffled[trick.deckPosition].name}}</figcaption>
                         </figure>
                         <button class="btn btn-primary" ng-click="trick.deckPosition = trick.deckPosition + 1" ng-hide="trick.deckPosition > 16">Next Card
@@ -212,7 +212,7 @@
                 <div ng-show="trick.page === 25">
                     <h1>Your Deck</h1>
                     <div style="text-align:center">
-                    <img ng-src="{{trick.shuffled[trick.deckPosition].source}}" style="width:auto;height:150px">
+                    <img ng-src="{{trick.shuffled[trick.deckPosition].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.deckPosition].id}}">
                         <br />
                       <div class="btn-group">
                         <button class="btn btn-primary" ng-click="trick.deckPosition = trick.deckPosition - 1" ng-disabled="trick.deckPosition < 1">Prev Card
@@ -237,6 +237,63 @@
             <p>&copy; John Allison 2014</p>
         </footer>
     </div>
+    
+    <!-- Preloads the images. Previous versions were laggy until the images were loaded. Hopefully this will help. -->
+    <div id="imagePreload" style="display:none">
+   <img src="img/SA.jpg" width="1" height="1" alt="Image">
+   <img src="img/SK.jpg" width="1" height="1" alt="Image">
+   <img src="img/SQ.jpg" width="1" height="1" alt="Image">
+   <img src="img/SJ.jpg" width="1" height="1" alt="Image">
+   <img src="img/S10.jpg" width="1" height="1" alt="Image">
+   <img src="img/S9.jpg" width="1" height="1" alt="Image">
+   <img src="img/S8.jpg" width="1" height="1" alt="Image">
+   <img src="img/S7.jpg" width="1" height="1" alt="Image">
+   <img src="img/S6.jpg" width="1" height="1" alt="Image">
+   <img src="img/S5.jpg" width="1" height="1" alt="Image">
+   <img src="img/S4.jpg" width="1" height="1" alt="Image">
+   <img src="img/S3.jpg" width="1" height="1" alt="Image">
+   <img src="img/S2.jpg" width="1" height="1" alt="Image">
+   <img src="img/CA.jpg" width="1" height="1" alt="Image">
+   <img src="img/CK.jpg" width="1" height="1" alt="Image">
+   <img src="img/CQ.jpg" width="1" height="1" alt="Image">
+   <img src="img/CJ.jpg" width="1" height="1" alt="Image">
+   <img src="img/C10.jpg" width="1" height="1" alt="Image">
+   <img src="img/C9.jpg" width="1" height="1" alt="Image">
+   <img src="img/C8.jpg" width="1" height="1" alt="Image">
+   <img src="img/C7.jpg" width="1" height="1" alt="Image">
+   <img src="img/C6.jpg" width="1" height="1" alt="Image">
+   <img src="img/C5.jpg" width="1" height="1" alt="Image">
+   <img src="img/C4.jpg" width="1" height="1" alt="Image">
+   <img src="img/C3.jpg" width="1" height="1" alt="Image">
+   <img src="img/C2.jpg" width="1" height="1" alt="Image">
+   <img src="img/DA.jpg" width="1" height="1" alt="Image">
+   <img src="img/DK.jpg" width="1" height="1" alt="Image">
+   <img src="img/DQ.jpg" width="1" height="1" alt="Image">
+   <img src="img/DJ.jpg" width="1" height="1" alt="Image">
+   <img src="img/D10.jpg" width="1" height="1" alt="Image">
+   <img src="img/D9.jpg" width="1" height="1" alt="Image">
+   <img src="img/D8.jpg" width="1" height="1" alt="Image">
+   <img src="img/D7.jpg" width="1" height="1" alt="Image">
+   <img src="img/D6.jpg" width="1" height="1" alt="Image">
+   <img src="img/D5.jpg" width="1" height="1" alt="Image">
+   <img src="img/D4.jpg" width="1" height="1" alt="Image">
+   <img src="img/D3.jpg" width="1" height="1" alt="Image">
+   <img src="img/D2.jpg" width="1" height="1" alt="Image">
+   <img src="img/HA.jpg" width="1" height="1" alt="Image">
+   <img src="img/HK.jpg" width="1" height="1" alt="Image">
+   <img src="img/HQ.jpg" width="1" height="1" alt="Image">
+   <img src="img/HJ.jpg" width="1" height="1" alt="Image">
+   <img src="img/H10.jpg" width="1" height="1" alt="Image">
+   <img src="img/H9.jpg" width="1" height="1" alt="Image">
+   <img src="img/H8.jpg" width="1" height="1" alt="Image">
+   <img src="img/H7.jpg" width="1" height="1" alt="Image">
+   <img src="img/H6.jpg" width="1" height="1" alt="Image">
+   <img src="img/H5.jpg" width="1" height="1" alt="Image">
+   <img src="img/H4.jpg" width="1" height="1" alt="Image">
+   <img src="img/H3.jpg" width="1" height="1" alt="Image">
+   <img src="img/H2.jpg" width="1" height="1" alt="Image">
+</div>
+    
     <!-- /container -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
