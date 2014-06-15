@@ -8,14 +8,6 @@ Originally written (somewhat unsuccessfully) using jQuery and jQueryUI, now bein
 ##CURRENT STATUS
 --------------
 
-**Functionality**:
-
-The path where the user has their own deck is fully functional, as is the reset function (as of this writing). Functionality still to be completed:
-
-* The functions for shuffling the deck need to be ported.
-* The functions and controls for the deck cut.
-* The functions and controls for when the card is presented
-
 **Aesthetics**:
 
 There is some Bootstrap  UI template stuff that needs to be cleared out and there's some testing stuff still to be cleared out. I also want to pretty up the buttons.

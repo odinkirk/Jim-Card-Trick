@@ -12,6 +12,12 @@
         this.cards = originalDeck;
         this.shuffled = [];
         this.shuffleDone = false;
+        this.cutDone = false;
+        this.cutPick = 25;
+        this.cutPickStr = "";
+        this.digitOne = 0;
+        this.digitTwo = 0;
+        this.magicNum = 0;
         this.deckPosition = 0;
         this.deckButtonNum = 0;
         this.deckButtonDisable = false;
@@ -41,16 +47,42 @@
             //enable the button to proceed
             this.shuffleDone = true;
         };
+       
+        //This locks in the selection, and does the adding and populating of the digits and the Magic Number
+        this.cutConfirm = function() {
+          this.cutPickStr = this.cutPick.toString(); // converts the number of the cut to a string
+            this.digitOne = parseInt(this.cutPickStr.charAt(0),10); // grabs the first digit
+            this.digitTwo = parseInt(this.cutPickStr.charAt(1),10); // grabs the second digit
+            this.magicNum = this.digitOne + this.digitTwo; // adds them to get the magic number
+            this.deckPosition = this.cutPick; // populates deck selector for later use.
+            this.cutDone = true; // locks out the controls to move the user forward.
+        };
         
-       //re-initializes the app
+        // Moves the deck position to the start and advances to the next page.
+        this.lastPage = function() {
+          this.deckPosition = 0;
+            this.page = 24;
+        };
+        
+        //re-initializes the app
         //TODO: Make sure all applicable variables are included before announcing 1.0.
         this.reset = function() {
-            this.cards = originalDeck;
-            this.shuffled = [];
-            this.shuffleDone = false;
-            this.deckPosition = 0;
-            this.deckButtonNum = 0;
-            this.deckButtonDisable = false;
+        while (this.shuffled.length > 0){
+            this.cards.push(this.shuffled[0]);
+            this.shuffled.splice(0,1);
+        }
+            
+        this.shuffleDone = false;
+        this.cutDone = false;
+        this.cutPick = 25;
+        this.cutPickStr = "";
+        this.digitOne = 0;
+        this.digitTwo = 0;
+        this.magicNum = 0;
+        this.deckPosition = 0;
+        this.deckButtonNum = 0;
+        this.deckButtonDisable = false;
+        this.page = 1;
             if (this.page == 1){
                 this.page = 21;
             }
