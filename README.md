@@ -7,16 +7,16 @@ Originally written (somewhat unsuccessfully) using jQuery and jQueryUI, now re-w
 
 ##CURRENT STATUS
 --------------
-**Functtionality**:
+**Functionality**:
 
-Headlines for the individual files 
+Functionality is working at present and there are no known issues.
 
 **Aesthetics**:
 
-There is some Bootstrap  UI template stuff that needs to be cleared out and there's some testing stuff still to be cleared out. I also want to pretty up the buttons.
+Headlines for the individual "pages" are off-center. Need to correct this.
 
 ##WISH LIST
-After a successful version 1.01, this is what's next.
+After a successful version 1.01, this is what's next (in no particular order).
 
 * Animations
 * Would be cool to set up a form on the user-has-deck track where they can put in the cut and then the value will be saved. Then use it on the next page to remind the user where to find the magic card.
@@ -30,3 +30,4 @@ After a successful version 1.01, this is what's next.
   * Shrank images so resize isn't necessary.
   * Added image preload section to HTML to improve response times.
 * Version 1.0:
+  * Full essential functionality achieved.
