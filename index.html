@@ -64,8 +64,8 @@
 -->
 
                 <!-- start page -->
-                <div ng-show="trick.page === 1">
-                    <h1>Do you have your own deck of cards?</h1>
+                <div ng-show="trick.page === 1" style="text-align:center">
+                    <h1 style="text-align:center">Do you have your own deck of cards?</h1>
                     <div class="btn-group">
                         <button class="btn btn-primary" ng-click="trick.page = 11">
                             Yes
@@ -78,56 +78,64 @@
                 </div>
                 <!-- Deck 1 page -->
                 <div ng-show="trick.page === 11">
-                    <h1>Time to Shuffle</h1>
-                    <p>Shuffle your deck of cards</p>
+                    <h1 style="text-align:center">Time to Shuffle</h1>
+                    <p>Shuffle your deck of cards. Shuffle them any way you like, just be sure they're randomized. Click the button to proceed when you're ready.</p>
+                    <div style="text-align:center">
                     <button class="btn btn-primary" ng-click="trick.page = 12">
-                        next
+                        Next
                     </button>
+                        </div>
                 </div>
                 <!-- Deck 2 page -->
                 <div ng-show="trick.page === 12">
-                    <h1>Cut the Deck</h1>
-                    <p>Cut the deck roughly in half. It does not have to be perfect, but it should be close. Keep the two halves separate for now.</p>
-                    <button class="btn btn-primary" ng-click="trick.page = 13">
-                        next
+                    <h1 style="text-align:center">Cut the Deck</h1>
+                    <p>Cut the deck roughly in half. It does not have to be perfect, but it should be close. Keep the two halves separate for now. Click the button to move on to the next step.</p>
+                    <div style="text-align:center">
+                    <button class="btn btn-primary" ng-click="trick.page = 13" style="text-align:center">
+                        Next
                     </button>
+                        </div>
                 </div>
                 <!-- Deck 3 page -->
                 <div ng-show="trick.page === 13">
-                    <h1>Count How Many</h1>
-                    <p>With the stack you have chosen remaining face down, count the number of cards and make a note of the number.</p>
+                    <h1 style="text-align:center">Count How Many</h1>
+                    <p>Take the top half of the deck and keep it remaining face down. Count the number of cards in this half and make a note of the number. Click the button when youre ready to move on to the next step.</p>
+                    <div style="text-align:center">
                     <button class="btn btn-primary" ng-click="trick.page = 14">
-                        next
-                    </button>
+                        Next
+                    </button></div>
                 </div>
                 <!-- Deck 4 page -->
                 <div ng-show="trick.page === 14">
-                    <h1>Add Them Up</h1>
-                    <p>Add the digits in the answer together arriving at a smaller number.</p>
+                    <h1 style="text-align:center">Add Them Up</h1>
+                    <p>Add the digits in the answer together arriving at a smaller number. For example: If you were a card ninja and cut the deck perfectly, arriving at 26 cards in the top half, we would add 2 plus 6 and get 8 as your magic number. When you've added up your digits and found your magic number, click the button to proceed.</p>
+                    <div style="text-align:center">
                     <button class="btn btn-primary" ng-click="trick.page = 15">
-                        next
-                    </button>
+                        Next
+                    </button></div>
                 </div>
                 <!-- Deck 5 page -->
                 <div ng-show="trick.page === 15">
-                    <h1>Your Card Revealed</h1>
-                    <p>From here forward, avoid rearranging the cards. Turn the deck half we're working with face up and count to the card positioned at your answer to the last step. Memorize the card.</p>
+                    <h1 style="text-align:center">Your Card Revealed</h1>
+                    <p>From here forward, avoid rearranging the cards. Turn top half of the deck face up and count throught the cards to the magic number from the last step. This is your magic card, so keep it in mind. When you've got it memorized, click the button.</p>
+                    <div style="text-align:center">
                     <button class="btn btn-primary" ng-click="trick.page = 16">
                         next
-                    </button>
+                    </button></div>
                 </div>
                 <!-- Deck 6 page -->
                 <div ng-show="trick.page === 16">
-                    <h1>Putting it all together</h1>
-                    <p>Being sure to keep the cards in the order they were in at the start of the last step, place this pack of cards face down on top of the rest of the deck.</p>
+                    <h1 style="text-align:center">Putting it all together</h1>
+                    <p>Being sure to keep the cards in the order they were in at the start of the last step, place the top half of the deck back (face down) on top of the rest of the deck. Then, click the button below.</p>
+                    <div style="text-align:center">
                     <button class="btn btn-primary" ng-click="trick.page = 17">
                         next
-                    </button>
+                    </button></div>
                 </div>
                 <!-- Deck 7 page -->
                 <div ng-show="trick.page === 17">
-                    <h1>And your card is...</h1>
-                    <p>Starting from the back of the deck turn one card at a time face up and let me know what you see for value and suit.</p>
+                    <h1 style="text-align:center">And your card is...</h1>
+                    <p>Starting from the top of the deck turn one card at a time face and let me know by clicking the button.</p>
                     <div style="text-align:center">
                         <button class="btn btn-primary" ng-click="trick.deckButton()" ng-disabled="trick.deckButtonDisable">
                             Next card...
@@ -142,7 +150,7 @@
 
                 <!-- Comp 1 page -->
                 <div ng-show="trick.page === 21">
-                    <h1>Time to Shuffle</h1>
+                    <h1 style="text-align:center">Time to Shuffle</h1>
                     <div style="text-align:center">
                         <button class="btn btn-primary" ng-click="trick.shuffle()" ng-disabled="trick.shuffleDone == true">
                             Shuffle the deck
@@ -155,7 +163,7 @@
                 </div>
                 <!-- Comp 2 page -->
                 <div ng-show="trick.page === 22">
-                    <h1>Cut the Deck</h1>
+                    <h1 style="text-align:center">Cut the Deck</h1>
                     <div style="text-align:center">
                         <figure>
                             <img ng-src="{{trick.shuffled[trick.cutPick].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.cutPick].id}}">
@@ -174,7 +182,7 @@
                 </div>
                 <!-- Comp 3 page -->
                 <div ng-show="trick.page === 23">
-                    <h1>Your Card Revealed</h1>
+                    <h1 style="text-align:center">Your Card Revealed</h1>
                     <p>You cut the deck with {{trick.cutPick}} cards in the top section. When we add the digits, we get {{trick.digitOne}} + {{trick.digitTwo}} = {{trick.magicNum}}. Going {{trick.magicNum}} cards into the top section from the cut gives us this card:</p>
                     <div style="text-align:center">
                         <figure>
@@ -188,7 +196,7 @@
                 </div>
                 <!-- Comp 4 page -->
                 <div ng-show="trick.page === 24">
-                    <h1>And your card is...</h1>
+                    <h1 style="text-align:center">And your card is...</h1>
                     <div style="text-align:center">
                         <figure>
                             <img ng-src="{{trick.shuffled[trick.deckPosition].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.deckPosition].id}}">
@@ -210,7 +218,7 @@
 
                  
                 <div ng-show="trick.page === 25">
-                    <h1>Your Deck</h1>
+                    <h1 style="text-align:center">Your Deck</h1>
                     <div style="text-align:center">
                     <img ng-src="{{trick.shuffled[trick.deckPosition].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.deckPosition].id}}">
                         <br />
@@ -228,7 +236,21 @@
                 </div>
 
             </div>
-
+            <div class="col-xs-6 col-md-4 col-md-offset-4">
+                
+                </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-4">
+                
+                </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-4">
+                
+                </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-4">
+                
+                </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-4">
+                
+                </div>
         </div>
 
         <hr>

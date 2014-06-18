@@ -1,9 +1,9 @@
 /**
 * Created with Jim-Card-Trick.
-* User: odinkirk
-* Date: 2014-06-13
+* User: odinkirk (John Allison)
+* Date: 2014-06-13 (date of creation of the file on Codio)
 * Time: 12:01 AM
-* To change this template use Tools | Templates.
+* 
 */
 (function() {
     var app = angular.module('magic', []);
@@ -65,9 +65,10 @@
         };
         
         //re-initializes the app
-        //TODO: Make sure all applicable variables are included before announcing 1.0.
         this.reset = function() {
-        while (this.shuffled.length > 0){
+       
+            //shuffles the deck
+            while (this.shuffled.length > 0){
             this.cards.push(this.shuffled[0]);
             this.shuffled.splice(0,1);
         }
@@ -82,7 +83,7 @@
         this.deckPosition = 0;
         this.deckButtonNum = 0;
         this.deckButtonDisable = false;
-        this.page = 1;
+            //back to start unless it's the start
             if (this.page == 1){
                 this.page = 21;
             }
