@@ -49,22 +49,11 @@
     </div>
 
     <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-xs-6 col-md-4 col-md-offset-4">
-                <!-- page template
-                <div ng-show="trick.page === [PAGE ID HERE]">
-                    <h1>Title</h1>
-                    content
-                    content
-                    content
-                    content
-                    content
-                </div>
--->
 
-                <!-- start page -->
-                <div ng-show="trick.page === 1" style="text-align:center">
+        <!-- start page -->
+        <div ng-show="trick.page === 1" style="text-align:center">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Do you have your own deck of cards?</h1>
                     <div class="btn-group">
                         <button class="btn btn-primary" ng-click="trick.page = 11">
@@ -74,66 +63,98 @@
                             No
                         </button>
                     </div>
-
                 </div>
-                <!-- Deck 1 page -->
-                <div ng-show="trick.page === 11">
+            </div>
+
+        </div>
+        <!-- Deck 1 page -->
+        <div ng-show="trick.page === 11">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Time to Shuffle</h1>
                     <p>Shuffle your deck of cards. Shuffle them any way you like, just be sure they're randomized. Click the button to proceed when you're ready.</p>
                     <div style="text-align:center">
-                    <button class="btn btn-primary" ng-click="trick.page = 12">
-                        Next
-                    </button>
-                        </div>
+                        <button class="btn btn-primary" ng-click="trick.page = 12">
+                            Next
+                        </button>
+                    </div>
                 </div>
-                <!-- Deck 2 page -->
-                <div ng-show="trick.page === 12">
+            </div>
+        </div>
+        <!-- Deck 2 page -->
+        <div ng-show="trick.page === 12">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Cut the Deck</h1>
                     <p>Cut the deck roughly in half. It does not have to be perfect, but it should be close. Keep the two halves separate for now. Click the button to move on to the next step.</p>
                     <div style="text-align:center">
-                    <button class="btn btn-primary" ng-click="trick.page = 13" style="text-align:center">
-                        Next
-                    </button>
-                        </div>
+                        <button class="btn btn-primary" ng-click="trick.page = 13" style="text-align:center">
+                            Next
+                        </button>
+                    </div>
                 </div>
-                <!-- Deck 3 page -->
-                <div ng-show="trick.page === 13">
+            </div>
+        </div>
+        <!-- Deck 3 page -->
+        <div ng-show="trick.page === 13">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Count How Many</h1>
                     <p>Take the top half of the deck and keep it remaining face down. Count the number of cards in this half and make a note of the number. Click the button when youre ready to move on to the next step.</p>
                     <div style="text-align:center">
-                    <button class="btn btn-primary" ng-click="trick.page = 14">
-                        Next
-                    </button></div>
+                        <button class="btn btn-primary" ng-click="trick.page = 14">
+                            Next
+                        </button>
+                    </div>
                 </div>
-                <!-- Deck 4 page -->
-                <div ng-show="trick.page === 14">
+            </div>
+        </div>
+        <!-- Deck 4 page -->
+        <div ng-show="trick.page === 14">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Add Them Up</h1>
                     <p>Add the digits in the answer together arriving at a smaller number. For example: If you were a card ninja and cut the deck perfectly, arriving at 26 cards in the top half, we would add 2 plus 6 and get 8 as your magic number. When you've added up your digits and found your magic number, click the button to proceed.</p>
                     <div style="text-align:center">
-                    <button class="btn btn-primary" ng-click="trick.page = 15">
-                        Next
-                    </button></div>
+                        <button class="btn btn-primary" ng-click="trick.page = 15">
+                            Next
+                        </button>
+                    </div>
                 </div>
-                <!-- Deck 5 page -->
-                <div ng-show="trick.page === 15">
+            </div>
+        </div>
+        <!-- Deck 5 page -->
+        <div ng-show="trick.page === 15">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Your Card Revealed</h1>
                     <p>From here forward, avoid rearranging the cards. Turn top half of the deck face up and count throught the cards to the magic number from the last step. This is your magic card, so keep it in mind. When you've got it memorized, click the button.</p>
                     <div style="text-align:center">
-                    <button class="btn btn-primary" ng-click="trick.page = 16">
-                        next
-                    </button></div>
+                        <button class="btn btn-primary" ng-click="trick.page = 16">
+                            next
+                        </button>
+                    </div>
                 </div>
-                <!-- Deck 6 page -->
-                <div ng-show="trick.page === 16">
+            </div>
+        </div>
+        <!-- Deck 6 page -->
+        <div ng-show="trick.page === 16">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Putting it all together</h1>
                     <p>Being sure to keep the cards in the order they were in at the start of the last step, place the top half of the deck back (face down) on top of the rest of the deck. Then, click the button below.</p>
                     <div style="text-align:center">
-                    <button class="btn btn-primary" ng-click="trick.page = 17">
-                        next
-                    </button></div>
+                        <button class="btn btn-primary" ng-click="trick.page = 17">
+                            next
+                        </button>
+                    </div>
                 </div>
-                <!-- Deck 7 page -->
-                <div ng-show="trick.page === 17">
+            </div>
+        </div>
+        <!-- Deck 7 page -->
+        <div ng-show="trick.page === 17">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">And your card is...</h1>
                     <p>Starting from the top of the deck turn one card at a time face and let me know by clicking the button.</p>
                     <div style="text-align:center">
@@ -145,11 +166,15 @@
                             Back to the beginning
                         </button>
                     </div>
-
                 </div>
+            </div>
 
-                <!-- Comp 1 page -->
-                <div ng-show="trick.page === 21">
+        </div>
+
+        <!-- Comp 1 page -->
+        <div ng-show="trick.page === 21">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Time to Shuffle</h1>
                     <div style="text-align:center">
                         <button class="btn btn-primary" ng-click="trick.shuffle()" ng-disabled="trick.shuffleDone == true">
@@ -161,8 +186,12 @@
                         </button>
                     </div>
                 </div>
-                <!-- Comp 2 page -->
-                <div ng-show="trick.page === 22">
+            </div>
+        </div>
+        <!-- Comp 2 page -->
+        <div ng-show="trick.page === 22">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Cut the Deck</h1>
                     <div style="text-align:center">
                         <figure>
@@ -180,8 +209,12 @@
                         </button>
                     </div>
                 </div>
-                <!-- Comp 3 page -->
-                <div ng-show="trick.page === 23">
+            </div>
+        </div>
+        <!-- Comp 3 page -->
+        <div ng-show="trick.page === 23">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Your Card Revealed</h1>
                     <p>You cut the deck with {{trick.cutPick}} cards in the top section. When we add the digits, we get {{trick.digitOne}} + {{trick.digitTwo}} = {{trick.magicNum}}. Going {{trick.magicNum}} cards into the top section from the cut gives us this card:</p>
                     <div style="text-align:center">
@@ -194,8 +227,12 @@
                         </button>
                     </div>
                 </div>
-                <!-- Comp 4 page -->
-                <div ng-show="trick.page === 24">
+            </div>
+        </div>
+        <!-- Comp 4 page -->
+        <div ng-show="trick.page === 24">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">And your card is...</h1>
                     <div style="text-align:center">
                         <figure>
@@ -203,9 +240,9 @@
                             <figcaption ng-show="trick.deckPosition == 18">Your card: The {{trick.shuffled[trick.deckPosition].name}}</figcaption>
                         </figure>
                         <button class="btn btn-primary" ng-click="trick.deckPosition = trick.deckPosition + 1" ng-hide="trick.deckPosition > 16">Next Card
-                            </button>
+                        </button>
                         <div class="btn-group" ng-show="trick.deckPosition > 16">
-                            <button class="btn btn-success" ng-click="trick.reset()" >
+                            <button class="btn btn-success" ng-click="trick.reset()">
                                 Again?
                             </button>
                             <button class="btn btn-primary" ng-click="trick.page = 25">
@@ -213,109 +250,100 @@
                             </button>
                         </div>
                     </div>
-                    
                 </div>
+            </div>
+        </div>
 
-                 
-                <div ng-show="trick.page === 25">
+        <!-- Shows the deck after the computer path -->
+        <div ng-show="trick.page === 25">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-md-offset-4">
                     <h1 style="text-align:center">Your Deck</h1>
                     <div style="text-align:center">
-                    <img ng-src="{{trick.shuffled[trick.deckPosition].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.deckPosition].id}}">
+                        <img ng-src="{{trick.shuffled[trick.deckPosition].source}}" style="width:auto;height:150px" alt="{{trick.shuffled[trick.deckPosition].id}}">
                         <br />
-                      <div class="btn-group">
-                        <button class="btn btn-primary" ng-click="trick.deckPosition = trick.deckPosition - 1" ng-disabled="trick.deckPosition < 1">Prev Card
+                        <div class="btn-group">
+                            <button class="btn btn-primary" ng-click="trick.deckPosition = trick.deckPosition - 1" ng-disabled="trick.deckPosition < 1">Prev Card
                             </button>
-                          <button class="btn btn-primary" ng-click="trick.deckPosition = trick.deckPosition + 1" ng-disabled="trick.deckPosition > 50">Next Card
+                            <button class="btn btn-primary" ng-click="trick.deckPosition = trick.deckPosition + 1" ng-disabled="trick.deckPosition > 50">Next Card
                             </button>
-                          </div>
+                        </div>
                         <br />
                         <button class="btn btn-success" ng-click="trick.reset()">
                             Back to the Start
                         </button>
                     </div>
                 </div>
-
             </div>
-            <div class="col-xs-6 col-md-4 col-md-offset-4">
-                
-                </div>
-            <div class="col-xs-6 col-md-4 col-md-offset-4">
-                
-                </div>
-            <div class="col-xs-6 col-md-4 col-md-offset-4">
-                
-                </div>
-            <div class="col-xs-6 col-md-4 col-md-offset-4">
-                
-                </div>
-            <div class="col-xs-6 col-md-4 col-md-offset-4">
-                
-                </div>
         </div>
 
-        <hr>
 
-        <footer>
-            <p>&copy; John Allison 2014</p>
-        </footer>
+
     </div>
-    
+
+    <hr>
+
+    <footer>
+        <p>&copy; John Allison 2014</p>
+    </footer>
+
+
     <!-- Preloads the images. Previous versions were laggy until the images were loaded. Hopefully this will help. -->
     <div id="imagePreload" style="display:none">
-   <img src="img/SA.jpg" width="1" height="1" alt="Image">
-   <img src="img/SK.jpg" width="1" height="1" alt="Image">
-   <img src="img/SQ.jpg" width="1" height="1" alt="Image">
-   <img src="img/SJ.jpg" width="1" height="1" alt="Image">
-   <img src="img/S10.jpg" width="1" height="1" alt="Image">
-   <img src="img/S9.jpg" width="1" height="1" alt="Image">
-   <img src="img/S8.jpg" width="1" height="1" alt="Image">
-   <img src="img/S7.jpg" width="1" height="1" alt="Image">
-   <img src="img/S6.jpg" width="1" height="1" alt="Image">
-   <img src="img/S5.jpg" width="1" height="1" alt="Image">
-   <img src="img/S4.jpg" width="1" height="1" alt="Image">
-   <img src="img/S3.jpg" width="1" height="1" alt="Image">
-   <img src="img/S2.jpg" width="1" height="1" alt="Image">
-   <img src="img/CA.jpg" width="1" height="1" alt="Image">
-   <img src="img/CK.jpg" width="1" height="1" alt="Image">
-   <img src="img/CQ.jpg" width="1" height="1" alt="Image">
-   <img src="img/CJ.jpg" width="1" height="1" alt="Image">
-   <img src="img/C10.jpg" width="1" height="1" alt="Image">
-   <img src="img/C9.jpg" width="1" height="1" alt="Image">
-   <img src="img/C8.jpg" width="1" height="1" alt="Image">
-   <img src="img/C7.jpg" width="1" height="1" alt="Image">
-   <img src="img/C6.jpg" width="1" height="1" alt="Image">
-   <img src="img/C5.jpg" width="1" height="1" alt="Image">
-   <img src="img/C4.jpg" width="1" height="1" alt="Image">
-   <img src="img/C3.jpg" width="1" height="1" alt="Image">
-   <img src="img/C2.jpg" width="1" height="1" alt="Image">
-   <img src="img/DA.jpg" width="1" height="1" alt="Image">
-   <img src="img/DK.jpg" width="1" height="1" alt="Image">
-   <img src="img/DQ.jpg" width="1" height="1" alt="Image">
-   <img src="img/DJ.jpg" width="1" height="1" alt="Image">
-   <img src="img/D10.jpg" width="1" height="1" alt="Image">
-   <img src="img/D9.jpg" width="1" height="1" alt="Image">
-   <img src="img/D8.jpg" width="1" height="1" alt="Image">
-   <img src="img/D7.jpg" width="1" height="1" alt="Image">
-   <img src="img/D6.jpg" width="1" height="1" alt="Image">
-   <img src="img/D5.jpg" width="1" height="1" alt="Image">
-   <img src="img/D4.jpg" width="1" height="1" alt="Image">
-   <img src="img/D3.jpg" width="1" height="1" alt="Image">
-   <img src="img/D2.jpg" width="1" height="1" alt="Image">
-   <img src="img/HA.jpg" width="1" height="1" alt="Image">
-   <img src="img/HK.jpg" width="1" height="1" alt="Image">
-   <img src="img/HQ.jpg" width="1" height="1" alt="Image">
-   <img src="img/HJ.jpg" width="1" height="1" alt="Image">
-   <img src="img/H10.jpg" width="1" height="1" alt="Image">
-   <img src="img/H9.jpg" width="1" height="1" alt="Image">
-   <img src="img/H8.jpg" width="1" height="1" alt="Image">
-   <img src="img/H7.jpg" width="1" height="1" alt="Image">
-   <img src="img/H6.jpg" width="1" height="1" alt="Image">
-   <img src="img/H5.jpg" width="1" height="1" alt="Image">
-   <img src="img/H4.jpg" width="1" height="1" alt="Image">
-   <img src="img/H3.jpg" width="1" height="1" alt="Image">
-   <img src="img/H2.jpg" width="1" height="1" alt="Image">
-</div>
-    
+        <img src="img/SA.jpg" width="1" height="1" alt="Image">
+        <img src="img/SK.jpg" width="1" height="1" alt="Image">
+        <img src="img/SQ.jpg" width="1" height="1" alt="Image">
+        <img src="img/SJ.jpg" width="1" height="1" alt="Image">
+        <img src="img/S10.jpg" width="1" height="1" alt="Image">
+        <img src="img/S9.jpg" width="1" height="1" alt="Image">
+        <img src="img/S8.jpg" width="1" height="1" alt="Image">
+        <img src="img/S7.jpg" width="1" height="1" alt="Image">
+        <img src="img/S6.jpg" width="1" height="1" alt="Image">
+        <img src="img/S5.jpg" width="1" height="1" alt="Image">
+        <img src="img/S4.jpg" width="1" height="1" alt="Image">
+        <img src="img/S3.jpg" width="1" height="1" alt="Image">
+        <img src="img/S2.jpg" width="1" height="1" alt="Image">
+        <img src="img/CA.jpg" width="1" height="1" alt="Image">
+        <img src="img/CK.jpg" width="1" height="1" alt="Image">
+        <img src="img/CQ.jpg" width="1" height="1" alt="Image">
+        <img src="img/CJ.jpg" width="1" height="1" alt="Image">
+        <img src="img/C10.jpg" width="1" height="1" alt="Image">
+        <img src="img/C9.jpg" width="1" height="1" alt="Image">
+        <img src="img/C8.jpg" width="1" height="1" alt="Image">
+        <img src="img/C7.jpg" width="1" height="1" alt="Image">
+        <img src="img/C6.jpg" width="1" height="1" alt="Image">
+        <img src="img/C5.jpg" width="1" height="1" alt="Image">
+        <img src="img/C4.jpg" width="1" height="1" alt="Image">
+        <img src="img/C3.jpg" width="1" height="1" alt="Image">
+        <img src="img/C2.jpg" width="1" height="1" alt="Image">
+        <img src="img/DA.jpg" width="1" height="1" alt="Image">
+        <img src="img/DK.jpg" width="1" height="1" alt="Image">
+        <img src="img/DQ.jpg" width="1" height="1" alt="Image">
+        <img src="img/DJ.jpg" width="1" height="1" alt="Image">
+        <img src="img/D10.jpg" width="1" height="1" alt="Image">
+        <img src="img/D9.jpg" width="1" height="1" alt="Image">
+        <img src="img/D8.jpg" width="1" height="1" alt="Image">
+        <img src="img/D7.jpg" width="1" height="1" alt="Image">
+        <img src="img/D6.jpg" width="1" height="1" alt="Image">
+        <img src="img/D5.jpg" width="1" height="1" alt="Image">
+        <img src="img/D4.jpg" width="1" height="1" alt="Image">
+        <img src="img/D3.jpg" width="1" height="1" alt="Image">
+        <img src="img/D2.jpg" width="1" height="1" alt="Image">
+        <img src="img/HA.jpg" width="1" height="1" alt="Image">
+        <img src="img/HK.jpg" width="1" height="1" alt="Image">
+        <img src="img/HQ.jpg" width="1" height="1" alt="Image">
+        <img src="img/HJ.jpg" width="1" height="1" alt="Image">
+        <img src="img/H10.jpg" width="1" height="1" alt="Image">
+        <img src="img/H9.jpg" width="1" height="1" alt="Image">
+        <img src="img/H8.jpg" width="1" height="1" alt="Image">
+        <img src="img/H7.jpg" width="1" height="1" alt="Image">
+        <img src="img/H6.jpg" width="1" height="1" alt="Image">
+        <img src="img/H5.jpg" width="1" height="1" alt="Image">
+        <img src="img/H4.jpg" width="1" height="1" alt="Image">
+        <img src="img/H3.jpg" width="1" height="1" alt="Image">
+        <img src="img/H2.jpg" width="1" height="1" alt="Image">
+    </div>
+
     <!-- /container -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
